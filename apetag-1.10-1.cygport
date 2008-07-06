@@ -1,0 +1,27 @@
+inherit python
+
+DESCRIPTION="APE 2.0 tagger"
+HOMEPAGE="http://muth.org/Robert/Apetag/"
+SRC_URI="http://muth.org/Robert/Apetag/${PN}.${PV}.tar.gz"
+SRC_DIR="Apetag"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	dobin apetag.exe tagdir.py rmid3tag.py
+
+	sed -e 's#import cddb#import Apetag.cddb as cddb#' \
+	    -i ${D}/usr/bin/tagdir.py
+
+	pythoninto Apetag
+	dopython cddb.py
+
+	python_optimize
+
+	dodoc 00changes 00copying 00readme
+}

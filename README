@@ -4,14 +4,13 @@ Apetag is command line tagging tool for multimedia files such as
 monkey's audio and mpc using the APE 2.0 standard.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  python-2.5.1-3
+  cygwin-1.5.25-15
+  python-2.5.2-2
   flac
   id3lib
 
 Build requirements:
-  cygwin-1.5.24-2
-  cygport-0.3.5-1
+  cygport-0.3.12-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
   make-3.81-1
@@ -23,15 +22,15 @@ Canonical website:
 -------------------------------------------
 
 Build instructions:
-  unpack apetag-1.8-X-src.tar.bz2
+  unpack apetag-1.10-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./apetag-1.8-X.cygport all
+  cygport ./apetag-1.10-X.cygport all
 
 This will create:
-  /usr/src/apetag-1.8-X-src.tar.bz2
-  /usr/src/apetag-1.8-X.tar.bz2
+  /usr/src/apetag-1.10-X-src.tar.bz2
+  /usr/src/apetag-1.10-X.tar.bz2
 
 -------------------------------------------
 
@@ -43,14 +42,15 @@ Files included in the binary package:
   /usr/lib/python2.5/site-packages/Apetag/cddb.py
   /usr/lib/python2.5/site-packages/Apetag/cddb.pyc
   /usr/lib/python2.5/site-packages/Apetag/cddb.pyo
-  /usr/share/doc/Cygwin/apetag-1.8.README
-  /usr/share/doc/apetag-1.8/00changes
-  /usr/share/doc/apetag-1.8/00copying
-  /usr/share/doc/apetag-1.8/00readme
+  /usr/share/doc/apetag-1.10/00copying
+  /usr/share/doc/apetag-1.10/00readme
 
 ------------------
 
 Port Notes:
+
+----- version 1.10-1 -----
+Version bump.
 
 ----- version 1.8-1 -----
 Initial release for Cygwin.
