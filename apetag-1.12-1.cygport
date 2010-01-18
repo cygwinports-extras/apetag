@@ -5,6 +5,8 @@ HOMEPAGE="http://muth.org/Robert/Apetag/"
 SRC_URI="http://muth.org/Robert/Apetag/${PN}.${PV}.tar.gz"
 SRC_DIR="Apetag"
 
+PATCH_URI="1.12-execinfo.h.patch"
+
 src_compile() {
 	lndirs
 	cd ${B}
@@ -13,15 +15,6 @@ src_compile() {
 
 src_install() {
 	cd ${B}
-	dobin apetag.exe tagdir.py rmid3tag.py
-
-	sed -e 's#import cddb#import Apetag.cddb as cddb#' \
-	    -i ${D}/usr/bin/tagdir.py
-
-	pythoninto Apetag
-	dopython cddb.py
-
-	python_optimize
-
-	dodoc 00changes 00copying 00readme
+	dobin apetag.exe *.py
+	dodoc 00*
 }
